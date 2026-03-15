@@ -1,16 +1,37 @@
-# React + Vite
+# Personal Portfolio Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ミニマリズムと余白を大切にした、写真やnote記事のためのポートフォリオサイトです。
+デザインリファレンスとして [public.work](https://public.work/) を参考にしています。
 
-Currently, two official plugins are available:
+## サイトの機能・特徴
+- **Masonry（メイソンリー）レイアウト**: 縦横比や高さが異なるギャラリー画像を、隙間なく美しくタイル状に配置します。
+- **ミニマルデザイン**: 余白（ホワイトスペース）を多めにとり、コンテンツ自体が主役になるように白背景＋グレー/黒文字をベースにしています。
+- **レスポンシブ対応**: スマートフォンやタブレットでも見やすいように自動でレイアウトが調整されます。
+- **ローカル画像対応**: 自身の画像ファイルを `public/images/` フォルダに配置することで、簡単にギャラリーを追加・更新できます。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 使用技術 (Technology Stack)
+- **React.js** (Vite)
+- **Tailwind CSS** (スタイリング・レスポンシブ対応)
+- **React Router DOM** (ページルーティング)
+- **Lucide React** (SNSアイコン)
 
-## React Compiler
+## ローカル環境での動かし方
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. 依存関係のインストール
+プロジェクトのルートディレクトリで以下のコマンドを実行します。
+```bash
+npm install
+```
 
-## Expanding the ESLint configuration
+### 2. 開発サーバーの起動
+以下のコマンドでローカル開発サーバーが立ち上がります。
+```bash
+npm run dev
+```
+ブラウザで `http://localhost:5173` にアクセスして動作を確認してください。
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## コンテンツの更新方法
+
+1. 追加したい画像を `public/images/` フォルダに保存します。
+2. `src/data/items.js` をエディタで開き、配列 (`items`) の中に画像のパス (`/images/...`) や、タイトル、リンク先URLを追記・修正してください。
+3. SNSリンクなどを修正する場合は `src/components/Header.jsx` や `src/pages/About.jsx` 内のURLを更新してください。
